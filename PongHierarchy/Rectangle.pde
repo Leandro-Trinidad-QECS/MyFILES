@@ -2,33 +2,28 @@ class Rectangle extends Shape {
   private float width;
   private float height;
   private color c;
-  
+  private float moveSpeed = 10;
+
   private Rectangle (float x, float y, float width, float height, color c) {
     super (x, y);
     this.width = width;
     this.height = height;
     this.c = c;
   }
-  
-  public void draw(){
+
+  public void draw() {
     fill(c);
     rect(x, y, width, height);
   }
-  
-  private void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == UP) {
-      y-=5;
-      if (y == 0) {
-      y = 0;
+  private void move(int dir) {
+    if(dir == 1) {
+      y -= moveSpeed;
     }
+    if(dir == 2) {
+      y += moveSpeed;
     }
-    if (keyCode == DOWN) {
-      y+=5;
+  }
+  private void mouseMove(float mousey) {
+    y=mousey;
   }
 }
-}
-}
-
-    
-  

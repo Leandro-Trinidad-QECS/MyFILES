@@ -35,18 +35,32 @@ public void draw(){
 }
 
 
-  //moving Circle
   ePub.step();
   cHex.step();
-  shapes.get(2).draw();
-  shapes.get(3).draw();
+  rRGB.mouseMove(mouseY);
   
-  //moving rectangle
-  rHex.keyPressed();
+}
+public void keyPressed() {
+  if(key == CODED) {
+    if(keyCode == UP) {
+      rHex.move(1);
+    }
+    if(keyCode == DOWN) {
+      rHex.move(2);
+    }
   
-  //bouncing circle
-  ePub.bounce();
-  cHex.bounce();
+  }
+}
+public void keyReleased() {
+  if(key == CODED) {
+    if(keyCode == UP) {
+      rHex.move(0);
+    }
+    if(keyCode == DOWN) {
+      rHex.move(0);
+    }
+  
+  }
 }
 
 abstract class Shape {
