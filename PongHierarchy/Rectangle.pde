@@ -1,8 +1,9 @@
 class Rectangle extends Shape {
+  
   private float width;
   private float height;
   private color c;
-  private float moveSpeed = 10;
+  private float moveSpeed = 30;
 
   private Rectangle (float x, float y, float width, float height, color c) {
     super (x, y);
